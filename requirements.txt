@@ -1,0 +1,21 @@
+# requirements.txt
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+mlflow
+shap
+lime
+flask
+dash
+plotly
+docker
+
+# Dockerfile
+FROM python:3.8-slim
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+EXPOSE 5000
+CMD ["python", "api/serve_model.py"]
